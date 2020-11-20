@@ -12,11 +12,12 @@
 */
 get_header();
 ?>
-<!-- preloader -->
+<!-- preloader
 <div id="loading">
 <span></span>
 <span></span>
 </div>
+-->
 <div class="content-area">
 <main>
 <div class="fp-site-banner">

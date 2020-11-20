@@ -147,8 +147,8 @@ display: none;
 .post {
 padding-top: 50px;
 padding-bottom: 50px;
-padding-left: 0px;
-padding-right: 0px;
+padding-left: 8px;
+padding-right: 8px;
 background-color: #fff;
 }
 .i-posts-area {
@@ -665,15 +665,116 @@ top: 0;
 }
 
 @media only screen and (max-device-width: 480px) {
-    /* STYLES HERE */
-    .custom-logo {
-    height: auto;
-    padding-top: 2px;
-    }
-    .title {
-    font-size: 2rem;
-    }
-    html {
-    min-width: 10em;
-    }
+/* STYLES HERE */
+.custom-logo {
+height: auto;
+padding-top: 2px;
+}
+.title {
+font-size: 2rem;
+}
+html {
+min-width: 10em;
+}
+}
+.site_footer {
+padding: 8px;
+background: linear-gradient(90deg, rgba(255,0,255,1) 0%, rgba(58,191,255,1) 100%);
+color: #fff;
+font-size: 12px;
+}
+
+.woocommerce-product-details__short-description {
+padding-bottom: 20px;
+}
+
+.woocommerce #content div.product .woocommerce-tabs, .woocommerce div.product .woocommerce-tabs, .woocommerce-page #content div.product .woocommerce-tabs, .woocommerce-page div.product .woocommerce-tabs {
+display: none;
+}
+
+.related.products {
+display: inline-block;
+}
+
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+margin: 8px;
+}
+
+.post {
+padding-left: 8px !important;
+padding-right: 8px !important;
+padding-bottom: 55px !important;
+}
+
+.woocommerce ul.products li.product .button {
+margin-top: 0px;
+background-color: steelblue;
+color: white;
+}
+
+.columns-4 {
+text-align: center;
+}
+
+.onsale {
+display: none;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-category__title, .woocommerce ul.products li.product .woocommerce-loop-product__title, .woocommerce ul.products li.product h3 {
+text-align: center;
+}
+
+mark.count {
+display: none;
+}
+
+.admin-bar {
+top: 32px;
+}
+
+/* mobile */
+@media screen and (min-width: 769px) {
+/* STYLES HERE */
+.fp-site-banner {
+}
+.fp-site-banner h1 {
+font-size: 2.5rem;
+}
+.fp-site-banner p {
+margin-bottom: 0;
+font-size: 1rem;
+font-style: italic;
+}
+.fp-site-banner p a {
+color: inherit;
+text-align: center;
+}
+html {
+min-width: 10em;
+}
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+/* STYLES HERE */
+}
+
+@media only screen and (max-device-width: 480px) {
+/* STYLES HERE */
+.custom-logo {
+height: auto;
+padding-top: 2px;
+}
+.title {
+font-size: 2rem;
+}
+.woocommerce table.shop_table_responsive tr td, .woocommerce-page table.shop_table_responsive tr td {
+display: inherit;
+text-align: right!important;
+}
+html {
+min-width: 10em;
+}
+#wpadminbar {
+position: fixed;
+}
 }
