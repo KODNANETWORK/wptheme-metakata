@@ -1,11 +1,8 @@
 ﻿<?php
 /**
 * The index template file
-*
 * This is the generic template file in a WordPress theme.
-*
 * @link https://kodna.net/
-*
 * @package WordPress
 * @subpackage Metakata
 * @since 0
@@ -33,7 +30,7 @@ get_header();
 <div id="menu">
 <div class="nav">
 <ul class="menu">
-<?php wp_nav_menu( array( 'theme_location' => 'head-menu' ) ); ?>
+<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
 </ul>
 </div>
 </div>

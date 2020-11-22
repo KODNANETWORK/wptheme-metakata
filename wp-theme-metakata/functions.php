@@ -41,8 +41,8 @@ add_theme_support( 'custom-logo' );
 /*menu function*/
 function register_menus() {
 register_nav_menus( array(
-'main menu' => __( 'Main Menu' ),
-'index menu' => __( 'Index Menu' )
+'main-menu' => __( 'Main Menu' ),
+'index-menu' => __( 'Index Menu' )
 )
 );
 }

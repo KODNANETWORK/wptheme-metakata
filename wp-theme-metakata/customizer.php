@@ -1,31 +1,28 @@
 <?php
 /**
- * The customizer file
- *
- * This is the customizer file in a WordPress theme.
- *
- * @link https://kodna.net/
- *
- * @package WordPress
- * @subpackage MetaKata
- * @since 0
- */
+* The customizer file
+* This is the customizer file in a WordPress theme.
+* @link https://kodna.net/
+* @package WordPress
+* @subpackage MetaKata
+* @since 0
+*/
 /* control panel */
 function metarealm_customize_register($wp_customize) {
-/* upload icon image */
-$wp_customize->add_section('pdn_home_section', array(
-'title' => 'Icon',
+/* upload ikon image */
+$wp_customize->add_section('ikon_section', array(
+'title' => 'Ikon',
 'description'   => 'Update image'
 )
 );
-$wp_customize->add_setting('pdn_home_img_settings', array(
+$wp_customize->add_setting('ikon_img_settings', array(
 //default value
 )
 );
-$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'pdn_home_img_control', array(
+$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'ikon_img_control', array(
 'label' => 'Edit Image',
-'settings'  => 'pdn_home_img_settings',
-'section'   => 'pdn_home_section'
+'settings'  => 'ikon_img_settings',
+'section'   => 'ikon_section'
 )
 )
 );
