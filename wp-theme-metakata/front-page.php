@@ -1,20 +1,16 @@
 ﻿<?php
 /**
-* The index template file
-* This is the generic template file in a WordPress theme.
-* @link https://kodna.net/
-* @package WordPress
-* @subpackage Metakata
-* @since 0
+ * Front page template file
+ * This is the generic template file in a WordPress theme.
+ *
+ * @link https://kodna.net/
+ *
+ * @package WordPress
+ * @subpackage MetaKata
+ * @since 0
 */
 get_header();
 ?>
-<!-- preloader
-<div id="loading">
-<span></span>
-<span></span>
-</div>
--->
 <div class="content-area">
 <main>
 <div class="fp-site-banner">

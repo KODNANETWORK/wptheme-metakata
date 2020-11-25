@@ -1,20 +1,29 @@
 ﻿<?php
 /**
-* The header for our theme
-* Contains the header element
-* @link https://kodna.net/
-* @package WordPress
-* @subpackage MetaKata
-* @since 0
+ * WordPress theme header file
+ *
+ * @link https://kodna.net/
+ *
+ * @package WordPress
+ * @subpackage MetaKata
+ * @since 0
 */
-?><!doctype html>
-<html <?php language_attributes(); ?>>
+?>
+
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
-<meta charset="utf-8">
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >
 <link rel="profile" href="https://gmpg.org/xfn/11">
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+<!-- preloader -->
+<div class="preloader-div">
+<div id="overlayer">
+<span class="loader">
+<span class="loader-inner"></span>
+</span>
+</div>
+</div>
+<body>

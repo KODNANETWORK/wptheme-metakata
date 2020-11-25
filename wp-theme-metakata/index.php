@@ -1,22 +1,17 @@
 ﻿<?php
 /**
-* The index template file
-* This is the index template file in a WordPress theme.
-* @link https://kodna.net/
-* @package WordPress
-* @subpackage MetaKkata
-* @since 0
+ * Index file
+ *
+ * This is the index template file in a WordPress theme.
+ *
+ * @link https://kodna.net/
+ *
+ * @package WordPress
+ * @subpackage MetaKata
+ * @since 0
 */
 get_header();
 ?>
-<!-- preloader -->
-<div class="preloader-div">
-<div id="overlayer">
-<span class="loader">
-<span class="loader-inner"></span>
-</span>
-</div>
-</div>
 <div id="primary" class="content-area">
 <div class="i-content-area">
 <div class="i-logo-div"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_theme_mod('ikon_img_settings') ?>" class="i-custom-logo"></img></a></div>

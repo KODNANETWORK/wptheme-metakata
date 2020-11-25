@@ -1,11 +1,14 @@
 <?php
 /**
-* The customizer file
-* This is the customizer file in a WordPress theme.
-* @link https://kodna.net/
-* @package WordPress
-* @subpackage MetaKata
-* @since 0
+ * The customizer file
+ *
+ * This is the customizer file in a WordPress theme.
+ *
+ * @link https://kodna.net/
+ *
+ * @package WordPress
+ * @subpackage MetaKata
+ * @since 0
 */
 /* control panel */
 function metarealm_customize_register($wp_customize) {

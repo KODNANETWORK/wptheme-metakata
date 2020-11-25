@@ -10,7 +10,7 @@
 ?>
 <!-- footer -->
 <footer class="site_footer">
-<p class="copyright"> © Copyright. All rights reserved.</p>
+<p class="copyright"> © Copyright | All rights reserved.</p>
 </footer>
 <?php wp_footer(); ?>
 </body>

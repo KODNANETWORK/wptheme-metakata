@@ -1,11 +1,14 @@
 <?php
 /**
-* The functions file
-* This is the functions file in a WordPress theme.
-* @link https://kodna.net/
-* @package WordPress
-* @subpackage MetaKata
-* @since 0
+ * Functions file
+ *
+ * This is the functions file in a WordPress theme.
+ *
+ * @link https://kodna.net/
+ *
+ * @package WordPress
+ * @subpackage MetaKata
+ * @since 0
 */
 /*wp_enqueue file loading */
 function load_scripts() {
@@ -15,7 +18,6 @@ wp_enqueue_style('FontAwesome');
 wp_register_style( 'Gfonts', 'https://fonts.googleapis.com/css?family=Raleway' );
 wp_enqueue_style('Gfonts');
 wp_enqueue_script( 'single-preloader', get_template_directory_uri() . '/assets/js/single-preloader.js', array( 'jquery' ) );
-wp_enqueue_script( 'preloader', get_template_directory_uri() . '/assets/js/preloader.js', array( 'jquery' ) );
 wp_enqueue_script( 'three.min', get_template_directory_uri() . '/assets/js/three.min.js');
 wp_enqueue_script( 'improvednoise', get_template_directory_uri() . '/assets/js/ImprovedNoise.js');
 wp_enqueue_script( 'detector', get_template_directory_uri() . '/assets/js/Detector.js');
@@ -73,7 +75,7 @@ add_filter('the_generator', 'wpb_remove_version');
 /* hide welcome module function */
 remove_action('welcome_panel', 'wp_welcome_panel');
 /* allow .psd .zip & .svg media uploads */
-function my_myme_types($mime_types){
+function mime_filetypes($mime_types){
 $mime_types['svg'] = 'image/svg+xml';
 //svg files
 $mime_types['psd'] = 'image/vnd.adobe.photoshop';
@@ -82,7 +84,7 @@ $mime_types['zip'] = 'application/zip, application/octet-stream, application/x-z
 //zip files
 return $mime_types;
 }
-add_filter('upload_mimes', 'my_myme_types', 1, 1);
+add_filter('upload_mimes', 'mime_filetypes', 1, 1);
 /* dashboard footer function */
 function remove_footer_admin () {
 echo 'Digital development by <a href="http://www.KODNA.net" target="_blank">KODNA Network</a></p>';
