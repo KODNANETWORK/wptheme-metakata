@@ -13,11 +13,11 @@
 /*wp_enqueue file loading */
 function load_scripts() {
 wp_enqueue_style( 'style', get_stylesheet_uri() );
+wp_enqueue_script( 'single-preloader', get_template_directory_uri() . '/assets/js/single-preloader.js', array( 'jquery' ) );
 wp_register_style( 'FontAwesome', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 wp_enqueue_style('FontAwesome');
 wp_register_style( 'Gfonts', 'https://fonts.googleapis.com/css?family=Raleway' );
 wp_enqueue_style('Gfonts');
-wp_enqueue_script( 'single-preloader', get_template_directory_uri() . '/assets/js/single-preloader.js', array( 'jquery' ) );
 wp_enqueue_script( 'three.min', get_template_directory_uri() . '/assets/js/three.min.js');
 wp_enqueue_script( 'improvednoise', get_template_directory_uri() . '/assets/js/ImprovedNoise.js');
 wp_enqueue_script( 'detector', get_template_directory_uri() . '/assets/js/Detector.js');
@@ -49,24 +49,6 @@ register_nav_menus( array(
 );
 }
 add_action( 'init', 'register_menus' );
-/*random post function (url.com/random/)*/
-function random_add_rewrite() {
-global $wp;
-$wp->add_query_var('random');
-add_rewrite_rule('random/?$', 'index.php?random=1', 'top');
-}
-add_action('template_redirect','random_template');
-function random_template() {
-if (get_query_var('random') == 1) {
-$posts = get_posts('post_type=post&orderby=rand&numberposts=1');
-foreach($posts as $post) {
-$link = get_permalink($post);
-}
-wp_redirect($link,307);
-exit;
-}
-}
-add_action('init','random_add_rewrite');
 /* hide version of wordPress */
 function wpb_remove_version() {
 return '';
@@ -74,17 +56,6 @@ return '';
 add_filter('the_generator', 'wpb_remove_version');
 /* hide welcome module function */
 remove_action('welcome_panel', 'wp_welcome_panel');
-/* allow .psd .zip & .svg media uploads */
-function mime_filetypes($mime_types){
-$mime_types['svg'] = 'image/svg+xml';
-//svg files
-$mime_types['psd'] = 'image/vnd.adobe.photoshop';
-//psd files
-$mime_types['zip'] = 'application/zip, application/octet-stream, application/x-zip-compressed, multipart/x-zip';
-//zip files
-return $mime_types;
-}
-add_filter('upload_mimes', 'mime_filetypes', 1, 1);
 /* dashboard footer function */
 function remove_footer_admin () {
 echo 'Digital development by <a href="http://www.KODNA.net" target="_blank">KODNA Network</a></p>';
