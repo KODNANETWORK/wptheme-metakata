@@ -10,14 +10,15 @@
  * @subpackage MetaKata
  * @since 0
 */
-/*wp_enqueue file loading */
-function load_scripts() {
+/*file load*/
+function preload_scripts() {
 wp_enqueue_style( 'style', get_stylesheet_uri() );
 wp_enqueue_script( 'single-preloader', get_template_directory_uri() . '/assets/js/single-preloader.js', array( 'jquery' ) );
+}
+add_action ( 'wp_head', 'preload_scripts' );
+function load_scripts() {
 wp_register_style( 'FontAwesome', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
-wp_enqueue_style('FontAwesome');
-wp_register_style( 'Gfonts', 'https://fonts.googleapis.com/css?family=Raleway' );
-wp_enqueue_style('Gfonts');
+wp_enqueue_style( 'FontAwesome' );
 wp_enqueue_script( 'three.min', get_template_directory_uri() . '/assets/js/three.min.js');
 wp_enqueue_script( 'improvednoise', get_template_directory_uri() . '/assets/js/ImprovedNoise.js');
 wp_enqueue_script( 'detector', get_template_directory_uri() . '/assets/js/Detector.js');
@@ -34,10 +35,25 @@ wp_enqueue_script( 'vignetteshader', get_template_directory_uri() . '/assets/js/
 wp_enqueue_script( 'glitchpass', get_template_directory_uri() . '/assets/js/postprocessing/GlitchPass.js');
 wp_enqueue_script( 'call', get_template_directory_uri() . '/assets/js/Call.js', '', '', true);
 }
-/*wp_enqueue scripts*/
 add_action( 'wp_footer', 'load_scripts' );
+/*html5 support*/
+add_theme_support( 'html5', array(
+'search-form',
+'comment-form',
+'comment-list',
+'gallery',
+'caption',
+'script',
+'style',
+'navigation-widgets',
+)
+);
+/* responsive embeds */
+add_theme_support( 'responsive-embeds' );
 /*title tag support */
 add_theme_support( 'title-tag' );
+/* thumbnail support */
+add_theme_support( 'post-thumbnails' );
 /*upload logo function*/
 add_theme_support( 'custom-logo' );
 /*menu function*/
@@ -49,18 +65,25 @@ register_nav_menus( array(
 );
 }
 add_action( 'init', 'register_menus' );
-/* hide version of wordPress */
+/*customizer*/
+require get_template_directory() . '/customizer.php';
+/*woocommerce*/
+function metakata_add_woocommerce_support() {
+add_theme_support( 'woocommerce' );
+}
+add_action( 'after_setup_theme', 'metakata_add_woocommerce_support' );
+add_theme_support( 'wc-product-gallery-zoom' );
+add_theme_support( 'wc-product-gallery-lightbox' );
+add_theme_support( 'wc-product-gallery-slider' );
+/*hide version of wordpress*/
 function wpb_remove_version() {
 return '';
 }
-add_filter('the_generator', 'wpb_remove_version');
+add_filter( 'the_generator', 'wpb_remove_version' );
 /* hide welcome module function */
-remove_action('welcome_panel', 'wp_welcome_panel');
+remove_action( 'welcome_panel', 'wp_welcome_panel' );
 /* dashboard footer function */
 function remove_footer_admin () {
-echo 'Digital development by <a href="http://www.KODNA.net" target="_blank">KODNA Network</a></p>';
+echo '<p> Digital development by <a href="http://www.KODNA.net" target="_blank">KODNA Network</a></p>';
 }
-add_filter('admin_footer_text', 'remove_footer_admin');
-/* customizer */
-require get_template_directory() . '/customizer.php';
-?>
+add_filter( 'admin_footer_text', 'remove_footer_admin' );

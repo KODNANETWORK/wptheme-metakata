@@ -19,7 +19,6 @@ $wp_customize->add_section('ikon_section', array(
 )
 );
 $wp_customize->add_setting('ikon_img_settings', array(
-//default value
 )
 );
 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'ikon_img_control', array(
@@ -47,4 +46,3 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize,'callout-text
 );
 }
 add_action('customize_register', 'metarealm_customize_register');
-?>
